@@ -2,7 +2,7 @@ public class Card {
 	private int cardRankValue;
 
 	private enum Symbol {
-		DIAMOND, HEART, SPADE, CLUB;
+		DIAMOND, HEART, CLUB, SPADE;
 	}
 
 	public Card(int number) {
@@ -15,13 +15,18 @@ public class Card {
 		else if (cardRankValue > 13 && cardRankValue < 27)
 			return Symbol.HEART;
 		else if (cardRankValue > 26 && cardRankValue < 40)
-			return Symbol.SPADE;
-		else
 			return Symbol.CLUB;
+		else
+			return Symbol.SPADE;
 	}
 	
 	public boolean isSameRank(Card newCard){
 		return Math.abs(cardRankValue - newCard.cardRankValue) == 13 ; 
+	}
+	
+	public int getRank(){
+		int rank = cardRankValue % 13 ;
+		return (rank == 0) ? 13 : rank ; 
 	}
 	
 	public boolean isIdentical(Card newCard){
