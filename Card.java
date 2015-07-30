@@ -3,7 +3,7 @@ public class Card {
 	private int cardRankValue;
 
 	private enum Symbol {
-		SPADE, HEART, CLUB, DIAMOND;
+		DIAMOND, HEART, SPADE, CLUB;
 	}
 
 	public Card(int number) {
@@ -20,6 +20,16 @@ public class Card {
 		else
 			return Symbol.CLUB;
 	}
+	
+	public boolean isSameRank(Card newCard){
+		return Math.abs(cardRankValue - newCard.cardRankValue) == 13 ; 
+	}
+	
+	public boolean isIdentical(Card newCard){
+			return cardRankValue == newCard.cardRankValue; 
+			
+}
+}
     
 }
 
