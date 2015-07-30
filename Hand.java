@@ -18,15 +18,15 @@ public class Hand {
         return 0;
     }
     
-    private boolean isSequence(ArrayList<Card> set){
+    private boolean findSequences(){
         return false;
         
     }
     
-    private boolean isGroup(ArrayList<Card> set) {
+    private boolean findGroups() {
         return false;
     }
-    private boolean isCanasta(ArrayList<Card> set) {
+    private boolean findCanastas() {
         return false;
     }
     
