@@ -23,15 +23,15 @@ public class Hand {
     }
     
     private void checkForSequences(){
-        return false;
+        
         
     }
     
     private void checkForGroups() {
-        return false;
+        
     }
     private void checkForCanastas() {
-        return false;
+        
     }
     
     
