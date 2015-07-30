@@ -22,15 +22,15 @@ public class Hand {
         return 0;
     }
     
-    private boolean findSequences(){
+    private void checkForSequences(){
         return false;
         
     }
     
-    private boolean findGroups() {
+    private void checkForGroups() {
         return false;
     }
-    private boolean findCanastas() {
+    private void checkForCanastas() {
         return false;
     }
     
