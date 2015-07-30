@@ -1,4 +1,3 @@
-
 public class Card {
 	private int cardRankValue;
 
@@ -29,7 +28,8 @@ public class Card {
 			return cardRankValue == newCard.cardRankValue; 
 			
 }
+	public boolean isConsecutive(Card newCard){
+		return (Math.abs(cardRankValue - newCard.cardRankValue) == 1) && (newCard.getSuite() == this.getSuite()); 
+		
 }
-    
 }
-
