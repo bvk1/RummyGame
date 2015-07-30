@@ -1,24 +1,25 @@
 
-public class Card{
-	
-private enum Symbol {
+public class Card {
+	private int cardRankValue;
+
+	private enum Symbol {
 		SPADE, HEART, CLUB, DIAMOND;
 	}
-	
-	private Symbol suit;
-	private String rank;
-	
-	Card(Symbol suit, String value){
-		this.suit = suit;
-		this.rank = value;
-				
+
+	public Card(int number) {
+		cardRankValue = number % 53;
 	}
-	
-	public Symbol getSuitType(){
-		return this.suit;
+
+	public Symbol getSuite() {
+		if (cardRankValue > 0 && cardRankValue < 14)
+			return Symbol.DIAMOND;
+		else if (cardRankValue > 13 && cardRankValue < 27)
+			return Symbol.HEART;
+		else if (cardRankValue > 26 && cardRankValue < 40)
+			return Symbol.SPADE;
+		else
+			return Symbol.CLUB;
 	}
-	
-	public String getRank(){
-		return this.rank;
-	}
+    
 }
+
