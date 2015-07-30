@@ -1,5 +1,9 @@
 import java.util.ArrayList;
 public class Hand {
+    private ArrayList<Card> diamondCards = new ArrayList<Card>();
+	private ArrayList<Card> heartCards = new ArrayList<Card>();
+	private ArrayList<Card> clubCards = new ArrayList<Card>();
+	private ArrayList<Card> spadeCards = new ArrayList<Card>();
     
     public static void main(String[] args){
         
