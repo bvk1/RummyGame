@@ -18,5 +18,17 @@ public class Hand {
         return 0;
     }
     
+    private boolean isSequence(ArrayList<Card> set){
+        return false;
+        
+    }
+    
+    private boolean isGroup(ArrayList<Card> set) {
+        return false;
+    }
+    private boolean isCanasta(ArrayList<Card> set) {
+        return false;
+    }
+    
     
 }
