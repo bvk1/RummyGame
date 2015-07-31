@@ -30,8 +30,17 @@ public class Hand {
     private void checkForGroups() {
         
     }
-    private void checkForCanastas() {
-        
+    private int getCanastaCount() {
+        int sequenceCount = 0;
+        for (int i = 0; i < cards.size() - 2; i++) {
+            if (cards.get(i).isIdentical(cards.get(i + 1)) && cards.get(i).isIdentical(cards.get(i + 1))) {
+                sequenceCount++;
+                cards.remove(i);
+                cards.remove(i + 1);
+                cards.remove(i + 2);
+            }
+        }
+        return sequenceCount;
     }
     
     
