@@ -29,6 +29,11 @@ public class Card {
 		return (rank == 0) ? 13 : rank ; 
 	}
 	
+	public int getRankValue(){
+		
+		return cardRankValue ; 
+	}
+	
 	public boolean isIdentical(Card newCard){
 			return cardRankValue == newCard.cardRankValue; 
 			
