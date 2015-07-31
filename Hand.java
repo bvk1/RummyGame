@@ -57,6 +57,28 @@ public class Hand {
         }
         return sequenceCount;
     }
+    private void sortAndSeperateSuite(ArrayList<Card> cards) {
+
+		Collections.sort(cards, new Card(0));
+		for (Card card : cards) {
+			switch (card.getSuite()) {
+			case DIAMOND:
+				diamondCards.add(card);
+				break;
+			case HEART:
+				heartCards.add(card);
+				break;
+			case CLUB:
+				clubCards.add(card);
+				break;
+			case SPADE:
+				spadeCards.add(card);
+				break;
+
+			}
+
+		}
+	}
     
     
 }
