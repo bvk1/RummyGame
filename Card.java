@@ -58,4 +58,9 @@ public class Card implements Comparator<Card> {
 		return (Math.abs(cardRankValue - newCard.cardRankValue) == 1) && (newCard.getSuite() == this.getSuite()); 
 		
 }
+
+public int getDifferenceInRanks(Card card){
+	return Math.abs(this.cardRankValue - card.cardRankValue);
+}
+
 }
