@@ -22,10 +22,25 @@ public class Hand {
         return 0;
     }
     
-    private void checkForSequences(){
-        
-        
-    }
+      private int getSequenceCount(ArrayList<Card> set){
+       	int sequenceCounter = 0;
+    	int len = set.size();
+    	if(len > 2){
+    		for (int i = 0; i < len; i++) {
+    		    	  Card card1 = set.get(i);
+    		    	  Card card2 = set.get(i+1);
+    		    	  Card card3 = set.get(i+2);
+    		    	  if(card3.getRankValue() - card2.getRankValue() == 1 && card2.getRankValue() - card1.getRankValue() == 1)
+    		    	  {
+    		    		  set.remove(card3);
+    		    		  set.remove(card2);
+    		    		  set.remove(card1);
+    		    		  sequenceCounter += 1;
+    		    	  }
+    		 }
+       }
+		return sequenceCounter ;
+    } 
     
     private void checkForGroups() {
         
