@@ -1,6 +1,7 @@
 import java.util.Comparator;
 public class Card implements Comparator<Card> {
 	private int cardRankValue;
+	private boolean isRemoved;
 
 	private enum Symbol {
 		DIAMOND, HEART, CLUB, SPADE;
@@ -8,6 +9,7 @@ public class Card implements Comparator<Card> {
 
 	public Card(int number) {
 		cardRankValue = number % 53;
+		isRemoved = false;
 	}
 	@Override
 	public int compare(Card card1, Card card2) {
@@ -51,7 +53,12 @@ public class Card implements Comparator<Card> {
 	public boolean isIdentical(Card newCard){
 			return cardRankValue == newCard.cardRankValue; 
 			
-}
+	}
+	
+	public boolean isCardRemoved(){
+		return isRemoved;
+		
+	}
 	public boolean isConsecutive(Card newCard){
 		return (Math.abs(cardRankValue - newCard.cardRankValue) == 1) && (newCard.getSuite() == this.getSuite()); 
 		
