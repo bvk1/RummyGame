@@ -106,46 +106,44 @@ public class Hand {
     }
 
     private int getGroupCount(ArrayList<Card> set) {
-        int groupCounter = 0;
-        HashMap<Integer, ArrayList<Card>> hm = new HashMap<Integer, ArrayList<Card>>();
 
-        for (Card c : set) {
-            int mod = c.getRankValue() % 13;
-            if (hm.containsKey(mod)) {
-                hm.get(mod).add(c);
-            } else {
+		int groupCounter = 0;
+		HashMap<Integer, ArrayList<Card>> hm = new HashMap<Integer, ArrayList<Card>>();
+		System.out.println(hm);
+		for (Card c : set) {
 
-                ArrayList<Card> sameGroup = new ArrayList<Card>();
-                sameGroup.add(c);
+			int mod = c.getRankValue() % 13;
+			
 
-                hm.put(mod, sameGroup);
+			if (hm.containsKey(mod)) {
+				hm.get(mod).add(c);
+			} else {
 
-            }
-        }
-        for (HashMap.Entry<Integer, ArrayList<Card>> entry : hm.entrySet()) {
-            if (entry.getValue().size() >= 3) {
+				ArrayList<Card> sameGroup = new ArrayList<Card>();
+				sameGroup.add(c);
 
-                groupCounter += getNumberOfPossibleGroups(entry.getValue());
+				hm.put(mod, sameGroup);
 
-            }
-        }
-        return groupCounter;
-    }
+			}
+		}
+		
+		for (HashMap.Entry<Integer, ArrayList<Card>> entry : hm.entrySet()) {
+			int possibleSize = entry.getValue().size();
+			if ( possibleSize >= 3) {
+				for(int i= 0; i < possibleSize; i++) {
+					cards.remove(entry.getValue().get(i));
+					
+					
+				}
 
-    private int getNumberOfPossibleGroups(ArrayList<Card> possibleGroups) {
-        return 0;
-    }
-    
-    private int processRemainingCards(){
-        
-        if (areAllCardsLoose()){
-            return cards.size() - 1;
-        }
-        else{
-            findPartialSequencePairs();
-        }
-        return 0;
-    }
+				return entry.getValue().size()/3;
+
+			}
+		}
+
+		return groupCounter;
+	}
+
     
      private boolean areAllCardsLoose(ArrayList<Card> set){
     	
