@@ -42,9 +42,26 @@ public class Hand {
 		return sequenceCounter ;
     } 
     
-    private void checkForGroups() {
-        
-    }
+      private int getGroupCount(ArrayList<Card> set) {
+    	int groupCounter = 0;
+    	int len = set.size();
+    	if(len > 2){
+    		for (int i = 0; i < len; i++) {
+    			 Card card1 = set.get(i);
+		    	 Card card2 = set.get(i+1);
+		    	 Card card3 = set.get(i+2);
+		    	 if(card2.getRank() == card1.getRank() && card2.getRank() == card3.getRank()){
+		    		 set.remove(card1);
+		    		 set.remove(card2);
+		    		 set.remove(card1);
+		    		 groupCounter += 1;
+		    		 
+		    	 }
+		 }
+    	}
+    	return groupCounter;
+  }
+  
     private int getCanastaCount() {
         int sequenceCount = 0;
         for (int i = 0; i < cards.size() - 2; i++) {
