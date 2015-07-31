@@ -1,4 +1,5 @@
-public class Card {
+import java.util.Comparator;
+public class Card implements Comparator<Card> {
 	private int cardRankValue;
 
 	private enum Symbol {
@@ -7,6 +8,19 @@ public class Card {
 
 	public Card(int number) {
 		cardRankValue = number % 53;
+	}
+	@Override
+	public int compare(Card card1, Card card2) {
+
+	Integer i1 =  card1.cardRankValue; 
+	Integer i2 =  card2.cardRankValue; 
+	if(i1 > i2 ){
+	    return 1;
+	}else if(i1< i2){
+	    return -1;
+	}else {
+	    return 0;
+	}
 	}
 
 	public Symbol getSuite() {
