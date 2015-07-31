@@ -42,19 +42,35 @@ public class Hand {
     }
 
     private int getNumberOfCardsRequired() {
-
-        int seqCanasta = getCanastaCount();
-        System.out.println("canasta : " + seqCanasta);
-        int seq = getSequenceCount(cards);
-        System.out.println("seqDiamond : " + seq);
+System.out.println("Before");
         for (Card c : cards) {
             System.out.println(c.getRankValue() + " " + c.getSuite() + " " + c.getRank());
         }
+        
+        System.out.println("canasta : " + getCanastaCount());
+        System.out.println("Canastas eliminated------------------");
+        for (Card c : cards) {
+            System.out.println(c.getRankValue() + " " + c.getSuite() + " " + c.getRank());
+        }
+        
+        System.out.println("seq : " + getSequenceCount(cards));
+        System.out.println("Sequences eliminated------------------");
+        for (Card c : cards) {
+            System.out.println(c.getRankValue() + " " + c.getSuite() + " " + c.getRank());
+        }
+        
         System.out.println("Group count : " + getGroupCount(cards));
+        System.out.println("groups eliminated------------------");
         for (Card c : cards) {
             System.out.println(c.getRankValue() + " " + c.getSuite() + " " + c.getRank());
         }
+        System.out.println("Remianing cards");
+        for (Card c : cards) {
+            System.out.println(c.getRankValue() + " " + c.getSuite() + " " + c.getRank());
+        }
+        
         return 0;
+
 
     }
 
