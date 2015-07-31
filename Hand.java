@@ -193,12 +193,12 @@ System.out.println("Before");
     	Card nextCard;
     	int count = 0;
     	for(int i = 0; i < set.size() ; i++ ){
-    		for(int j = 0; j < set.size(); j++ )
+    		for(int j = i+1; j < set.size(); j++ )
     		{
-    			if(i!=j){
+    		
     				if(set.get(i).getRank() == set.get(j).getRank() && set.get(i).getSuite() != set.get(j).getSuite())
     					count++;
-    			}
+    		
     			
     		}
     		
