@@ -147,7 +147,16 @@ public class Hand {
         return 0;
     }
     
-    private boolean areAllCardsLoose(){
+     private boolean areAllCardsLoose(ArrayList<Card> set){
+    	
+    	Card currentCard;
+    	Card nextCard;
+    	for(int i = 0; i < set.size() - 1; i++){
+    		currentCard = set.get(i);
+    		nextCard = set.get(i+1);
+    		if(currentCard.getDifferenceInRanks(nextCard) == 1 || currentCard.getDifferenceInRanks(nextCard) == 2)
+    			return false;
+    	}
         return true;
     }
     
