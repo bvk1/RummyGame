@@ -44,9 +44,8 @@ public class Hand {
     
       private int getGroupCount(ArrayList<Card> set) {
     	int groupCounter = 0;
-    	int len = set.size();
-    	if(len > 2){
-    		for (int i = 0; i < len; i++) {
+       	if(set.size() > 2){
+    		for (int i = 0; i < set.size() - 2; i++) {
     			 Card card1 = set.get(i);
 		    	 Card card2 = set.get(i+1);
 		    	 Card card3 = set.get(i+2);
