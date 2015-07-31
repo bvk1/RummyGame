@@ -57,8 +57,11 @@ public class Card implements Comparator<Card> {
 	
 	public boolean isCardRemoved(){
 		return isRemoved;
-		
 	}
+        
+        public void setRemove(){
+            isRemoved = true;
+        }
 	public boolean isConsecutive(Card newCard){
 		return (Math.abs(cardRankValue - newCard.cardRankValue) == 1) && (newCard.getSuite() == this.getSuite()); 
 		
