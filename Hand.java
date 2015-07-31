@@ -160,6 +160,20 @@ public class Hand {
         return true;
     }
     
+        
+    private int findPartialCanasta(ArrayList<Card> set){
+    	Card currentCard;
+    	Card nextCard;
+    	int count = 0;
+    	for(int i = 0; i < set.size() - 1; i++){
+    		currentCard = set.get(i);
+    		nextCard = set.get(i+1);
+    		if(currentCard.isIdentical(nextCard)) count++; 
+    	}
+    	return count;
+    }
+   
+    
     private int findPartialSequencePairs(){
         
         return 1;
